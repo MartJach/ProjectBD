@@ -37,14 +37,14 @@ public class Responsibility {
 												CascadeType.PERSIST,
 												CascadeType.REFRESH})
 	@JoinColumn(name="unit_id")
-	private int unitId;
+	private BibUnit unitId;
 	
 	@ManyToOne(fetch=FetchType.LAZY, cascade= {CascadeType.DETACH,
 												CascadeType.MERGE,
 												CascadeType.PERSIST,	
 												CascadeType.REFRESH})
 	@JoinColumn(name="person_id")
-	private int personId;
+	private Person personId;
 	
 	@NonNull
 	@Column(name="orig_surname")
@@ -61,7 +61,7 @@ public class Responsibility {
 												CascadeType.PERSIST,
 												CascadeType.REFRESH})
 	@JoinColumn(name="affilation")
-	private int affiliation;
+	private Institution affiliation;
 
 	public Responsibility(String type, String origSurname, String origName, String origName2) {
 		this.type = type;

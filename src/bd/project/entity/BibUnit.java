@@ -21,7 +21,7 @@ import lombok.NonNull;
 import lombok.ToString;
 
 @Entity
-@Table(name="bib_unit")
+@Table(name="bib_units")
 @ToString(exclude={"publisherId", "journalId"})
 @Data
 @NoArgsConstructor
