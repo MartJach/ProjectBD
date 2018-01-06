@@ -2,6 +2,7 @@
     background-color: #00a3fa;
     margin: 0px;
     padding: 0px;
+    color: #fff;
 }
 .navigation{
     display: inline-block;
@@ -16,7 +17,16 @@
 }
 
 .nav-logo {
-  height: 40px;
+    height: 24px;
+}
+
+.nav-icons {
+    max-height: 24px;
+    transition: all .3s ease-in-out;
+}
+
+.nav-icons:hover {
+    transform: scale(1.2);
 }
 
 .publisher {

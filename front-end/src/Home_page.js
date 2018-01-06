@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import add from './add.svg';
-import search from './search.svg';
-import home from './home.svg';
-import power from './power.svg';
+import logo from './img/logo.png';
+import add from './img/icons/add.svg';
+import search from './img/icons/search.svg';
+import home from './img/icons/home.svg';
+import power from './img/icons/power.svg';
 import './Home_page.css';
 import {Publisher} from './Publisher.js';
 
@@ -15,7 +15,7 @@ export class Welcome extends React.Component {
         <div className='navbar'>
             <nav>
                 Witaj <strong>{this.props.user.username}</strong>! 
-                <img src={logo} className="nav-logo" alt="logo" /> Librarian
+                <img src={logo} className="nav-logo" alt="logo" />
 					<ul className='navigation'>
 						<li><img src={add} className="nav-icons" alt="add" /> </li>
 						<li><img src={search} className="nav-icons" alt="search" /></li>
