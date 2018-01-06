@@ -31,7 +31,7 @@ class LoginForm extends React.Component {
                 <input type="password" ref="password" placeholder="hasło" required/> 
             </div>  
 
-            <button className='form_button'> Zaloguj </button>
+            <button className='btn btn-primary'> Zaloguj </button>
         </div> 
       </form>
     )
