@@ -8,7 +8,7 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Cześć Sarenko!</h1>
+          <h1 className="App-title"></h1>
         </header>
         <p className="App-intro">
           Wszystko zrobiłaś idealnie i działa ;) React jest super
