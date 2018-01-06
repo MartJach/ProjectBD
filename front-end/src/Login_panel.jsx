@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import logo from './img/logo.png';
 import './Login_panel.css';
 import {Welcome} from './Home_page.js';
 
@@ -21,7 +21,6 @@ class LoginForm extends React.Component {
         <div className='form_items'>
 
             <img src={logo} className="App-logo" alt="logo" /> 
-            <h1 className="App-title">Librarian</h1> 
 
             <div className='form_inputs'>
                 <input type="text" ref="username" placeholder="login" required/> 
