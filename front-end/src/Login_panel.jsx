@@ -23,11 +23,11 @@ class LoginForm extends React.Component {
             <img src={logo} className="App-logo" alt="logo" /> 
 
             <div className='form_inputs'>
-                <input type="text" ref="username" placeholder="login" required/> 
+                <input type="text" ref="username" placeholder="Nazwa użytkownika" required/> 
             </div>
 
             <div className='form_inputs'>  
-                <input type="password" ref="password" placeholder="hasło" required/> 
+                <input type="password" ref="password" placeholder="Hasło" required/> 
             </div>  
 
             <button className='btn btn-primary'> Zaloguj </button>
