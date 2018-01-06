@@ -17,7 +17,16 @@
 }
 
 .nav-logo {
-  height: 30px;
+    height: 24px;
+}
+
+.nav-icons {
+    max-height: 24px;
+    transition: all .3s ease-in-out;
+}
+
+.nav-icons:hover {
+    transform: scale(1.2);
 }
 
 .publisher {
