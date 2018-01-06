@@ -1,18 +1,9 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './Login_panel.css';
+import {Welcome} from './Home_page.js';
 
-//panel po zalogowaniu (to będzie następny komponent w następnym pliku)
-const Welcome = ({user, onSignOut})=> {
-  return (
-    <div>
-      Witaj <strong>{user.username}</strong>! Tu będzie dalsza część aplikacji
-        <div id="button_logout">
-          <button className='form_button' onClick={onSignOut}> Wyloguj </button>
-        </div>
-    </div>
-  )
-}
+
 
 //logowanie formularz
 class LoginForm extends React.Component {

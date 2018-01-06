@@ -1,0 +1,25 @@
+.navbar{
+    background-color: #00a3fa;
+    margin: 0px;
+    padding: 0px;
+}
+.navigation{
+    display: inline-block;
+}
+.navigation > li
+{
+    display: inline-flex;
+    justify-content: space-between;
+	padding-left: 20px;
+    padding-right: 10px;
+    cursor: pointer;
+}
+
+.nav-logo {
+  height: 40px;
+}
+
+.publisher {
+    background-color: #dadada;
+    margin: 0px;
+}
