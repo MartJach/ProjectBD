@@ -1,8 +1,9 @@
 import React from 'react';
-import UserSettings from '../../components/UserSettings/';
 
 const Settings = () => (
-  <UserSettings />
+  <div className="animated fadeIn">
+    PODSTRONA
+  </div>
 );
 
 export default Settings;
