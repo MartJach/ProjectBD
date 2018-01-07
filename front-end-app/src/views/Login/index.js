@@ -10,11 +10,13 @@ const styles = {
     border: 'none',
   },
   container: {
-    background: 'radial-gradient(ellipse at center, rgba(125,185,232,1) 0%,rgba(30,87,153,1) 100%);',
+    background: '-moz-radial-gradient(center, ellipse cover, rgba(125,185,232,1) 0%, rgba(30,87,153,1) 100%)',
+    background: '-webkit-radial-gradient(center, ellipse cover, rgba(125,185,232,1) 0%,rgba(30,87,153,1) 100%)',
+    background: 'radial-gradient(ellipse at center, rgba(125,185,232,1) 0%,rgba(30,87,153,1) 100%)',
   },
   logoPosition: {
     display: 'block',
-    margin: '0 auto 100px auto',
+    margin: '0 auto 60px auto',
   },
 };
 
