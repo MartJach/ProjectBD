@@ -1,7 +1,10 @@
 const routes = {
   '/': 'Home',
   '/login': 'Login',
-  '/dashboard': 'Dashboard',
-  '/settings': 'Settings',
+  '/home': 'Strona główna',
+  '/publications': 'Publikacje',
+  '/authors': 'Autorzy',
+  '/houses': 'Wydawnictwa',
+  '/add': 'Dodaj...',
 };
 export default routes;
