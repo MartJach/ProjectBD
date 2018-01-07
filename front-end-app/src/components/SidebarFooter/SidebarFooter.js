@@ -17,7 +17,7 @@ class SidebarFooter extends Component {
             <RsNavLink href="#" onClick={SidebarFooter.logOut}>
               <i role="none" className="icon-logout"
               />
-              Logout
+              Wyloguj
             </RsNavLink>
           </NavItem>
         </ul>
