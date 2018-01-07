@@ -1,9 +1,9 @@
 import React from 'react';
 
-const Settings = () => (
+const Houses = () => (
   <div className="animated fadeIn">
-    PODSTRONA
+    PODSTRONA Z WYDAWNICTWAMI
   </div>
 );
 
-export default Settings;
+export default Houses;

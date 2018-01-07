@@ -1,18 +1,45 @@
 export default {
   items: [
     {
-      name: 'Dashboard',
-      url: '/dashboard',
-      icon: 'icon-speedometer',
+      name: 'Strona główna',
+      url: '/home',
+      icon: 'icon-home',
       badge: {
         variant: 'info',
         text: '', // home
       },
     },
     {
-      name: 'Settings',
-      url: '/settings',
-      icon: 'icon-settings',
+      name: 'Publikacje',
+      url: '/publications',
+      icon: 'icon-book-open',
+      badge: {
+        variant: 'info',
+        text: '',
+      },
+    },
+    {
+      name: 'Autorzy',
+      url: '/authors',
+      icon: 'icon-people',
+      badge: {
+        variant: 'info',
+        text: '',
+      },
+    },
+    {
+      name: 'Wydawnictwa',
+      url: '/houses',
+      icon: 'icon-graduation',
+      badge: {
+        variant: 'info',
+        text: '',
+      },
+    },
+    {
+      name: 'Dodaj...',
+      url: '/add',
+      icon: 'icon-plus',
       badge: {
         variant: 'info',
         text: '',

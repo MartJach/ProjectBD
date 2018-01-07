@@ -7,10 +7,10 @@ import {
   CardBody,
 } from 'reactstrap';
 
-const Dashboard = () => (
+const Home = () => (
   <div className="animated fadeIn">
     STRONA GŁÓWNA
   </div>
 );
 
-export default Dashboard;
+export default Home;
