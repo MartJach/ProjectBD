@@ -32,6 +32,7 @@ class LoginAuth extends Component {
     };
 
     this.checkAuthLogin = this.checkAuthLogin.bind(this);
+    this.pressEnter = this.pressEnter.bind(this);
     this.setBankID = this.setBankID.bind(this);
     this.setUserID = this.setUserID.bind(this);
   }
@@ -55,16 +56,22 @@ class LoginAuth extends Component {
     }
   }
 
+  pressEnter(e) {
+    if (e.key === 'Enter') {
+      this.checkAuthLogin();
+    }
+  }
+
   render() {
     return (
       <div>
         <InputGroup className="mb-3" id="userid">
           <InputGroupAddon><i className="icon-user" /></InputGroupAddon>
-          <Input type="text" value={this.state.userID} placeholder="Nazwa użytkownika" onChange={this.setUserID} required />
+          <Input type="text" value={this.state.userID} placeholder="Nazwa użytkownika" onChange={this.setUserID} required onKeyPress={this.pressEnter}/>
         </InputGroup>
         <InputGroup className="mb-3" id="bankid">
           <InputGroupAddon><i className="icon-lock" /></InputGroupAddon>
-          <Input type="password" value={this.state.bankID} placeholder="Hasło" onChange={this.setBankID} required />
+          <Input type="password" value={this.state.bankID} placeholder="Hasło" onChange={this.setBankID} required onKeyPress={this.pressEnter}/>
         </InputGroup>
         <Row>
           <Col xs="12" style={styles.buttonAligner}>
