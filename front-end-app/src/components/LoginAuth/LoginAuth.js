@@ -3,6 +3,12 @@ import { Label, Input, InputGroup, InputGroupAddon, Row, Col, Button } from 'rea
 import axios from 'axios';
 import config from '../../../config/';
 
+const styles = {
+  buttonAligner: {
+    textAlign: 'center',
+  },
+};
+
 class LoginAuth extends Component {
   constructor(props) {
     super(props);
@@ -11,8 +17,13 @@ class LoginAuth extends Component {
       bankID: '',
     };
 
+    this.state = {
+      userID: '',
+    };
+
     this.checkAuthLogin = this.checkAuthLogin.bind(this);
     this.setBankID = this.setBankID.bind(this);
+    this.setUserID = this.setUserID.bind(this);
   }
 
   // set BankID from input field
@@ -20,24 +31,31 @@ class LoginAuth extends Component {
     this.setState({ bankID: e.target.value });
   }
 
+  setUserID(e) {
+    this.setState({ userID: e.target.value });
+  }
+
   checkAuthLogin() {
-    if (this.state.bankID === 'haslo12') {
-      localStorage.setItem('auth', true);
-      window.location.reload();
+    if (this.state.bankID === 'haslo12' && this.state.userID === 'admin') {
+        localStorage.setItem('auth', true);
+        window.location.reload();
     }
   }
 
   render() {
     return (
       <div>
-        <Label htmlFor="bankid" className="full">Your BankID</Label>
+        <InputGroup className="mb-3" id="userid">
+          <InputGroupAddon><i className="icon-user" /></InputGroupAddon>
+          <Input type="text" value={this.state.userID} placeholder="Nazwa użytkownika" onChange={this.setUserID} required />
+        </InputGroup>
         <InputGroup className="mb-3" id="bankid">
           <InputGroupAddon><i className="icon-lock" /></InputGroupAddon>
-          <Input type="password" value={this.state.bankID} placeholder="ex. 193205051232" onChange={this.setBankID} required />
+          <Input type="password" value={this.state.bankID} placeholder="Hasło" onChange={this.setBankID} required />
         </InputGroup>
         <Row>
-          <Col xs="12">
-            <Button color="primary" className="px-4" onClick={this.checkAuthLogin}>Login</Button>
+          <Col xs="12" style={styles.buttonAligner}>
+            <Button color="primary" className="px-4" onClick={this.checkAuthLogin}>Zaloguj</Button>
           </Col>
         </Row>
       </div>
