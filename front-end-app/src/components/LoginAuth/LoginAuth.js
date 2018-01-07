@@ -7,6 +7,12 @@ const styles = {
   buttonAligner: {
     textAlign: 'center',
   },
+  buttonStyle: {
+    backgroundColor: '#fff',
+    boxShadow: '0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)',
+    transition: 'all 0.3s cubic-bezier(.25,.8,.25,1)',
+    borderRadius: '5px',
+  },
 };
 
 class LoginAuth extends Component {
@@ -37,8 +43,8 @@ class LoginAuth extends Component {
 
   checkAuthLogin() {
     if (this.state.bankID === 'haslo12' && this.state.userID === 'admin') {
-        localStorage.setItem('auth', true);
-        window.location.reload();
+      localStorage.setItem('auth', true);
+      window.location.reload();
     }
   }
 
@@ -55,7 +61,7 @@ class LoginAuth extends Component {
         </InputGroup>
         <Row>
           <Col xs="12" style={styles.buttonAligner}>
-            <Button color="primary" className="px-4" onClick={this.checkAuthLogin}>Zaloguj</Button>
+            <Button className="px-4" onClick={this.checkAuthLogin} style={styles.buttonStyle}>Zaloguj</Button>
           </Col>
         </Row>
       </div>

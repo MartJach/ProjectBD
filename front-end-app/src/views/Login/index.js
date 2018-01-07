@@ -18,6 +18,9 @@ const styles = {
     display: 'block',
     margin: '0 auto 60px auto',
   },
+  textColor: {
+    color: '#fff',
+  },
 };
 
 const Login = () => (
@@ -30,7 +33,7 @@ const Login = () => (
               <Card className="p-4" style={styles.card}>
                 <CardBody className="card-body">
                   <img src={Logo} style={styles.logoPosition} />
-                  <p className="text-muted">Zaloguj się do panelu administracyjnego</p>
+                  <p style={styles.textColor}>Zaloguj się do panelu administracyjnego</p>
                   <LoginAuth />
                 </CardBody>
               </Card>
