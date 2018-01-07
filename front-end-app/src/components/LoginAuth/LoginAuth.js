@@ -13,6 +13,12 @@ const styles = {
     transition: 'all 0.3s cubic-bezier(.25,.8,.25,1)',
     borderRadius: '5px',
   },
+  errText: {
+    color: 'yellow',
+    fontWeight: 'bold',
+    textAlign: 'center',
+    marginTop: '10px',
+  },
 };
 
 class LoginAuth extends Component {
@@ -21,10 +27,8 @@ class LoginAuth extends Component {
 
     this.state = {
       bankID: '',
-    };
-
-    this.state = {
       userID: '',
+      errorMessage: false,
     };
 
     this.checkAuthLogin = this.checkAuthLogin.bind(this);
@@ -45,6 +49,9 @@ class LoginAuth extends Component {
     if (this.state.bankID === 'haslo12' && this.state.userID === 'admin') {
       localStorage.setItem('auth', true);
       window.location.reload();
+      this.setState({ errorMessage: false });
+    } else {
+      this.setState({ errorMessage: true });
     }
   }
 
@@ -62,6 +69,9 @@ class LoginAuth extends Component {
         <Row>
           <Col xs="12" style={styles.buttonAligner}>
             <Button className="px-4" onClick={this.checkAuthLogin} style={styles.buttonStyle}>Zaloguj</Button>
+          </Col>
+          <Col xs="12" style={styles.errText}>
+            {this.state.errorMessage ? <div>Podaj prawidłowe dane!</div> : '' }
           </Col>
         </Row>
       </div>
