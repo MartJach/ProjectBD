@@ -28,7 +28,7 @@ export default class PublicationsTable extends Component {
 
   render() {
     return (
-      <BootstrapTable data={this.state.publications} search version='4'>
+      <BootstrapTable data={this.state.publications} search version='4' pagination>
         <TableHeaderColumn isKey dataField='userId' dataSort>Product ID</TableHeaderColumn>
         <TableHeaderColumn dataField='id' dataSort>Product Name</TableHeaderColumn>
         <TableHeaderColumn dataField='title' dataSort>Product Price</TableHeaderColumn>
