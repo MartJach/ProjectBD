@@ -29,9 +29,12 @@ export default class PublicationsTable extends Component {
   render() {
     return (
       <BootstrapTable data={this.state.publications} search version='4' pagination>
-        <TableHeaderColumn isKey dataField='userId' dataSort>Product ID</TableHeaderColumn>
-        <TableHeaderColumn dataField='id' dataSort>Product Name</TableHeaderColumn>
-        <TableHeaderColumn dataField='title' dataSort>Product Price</TableHeaderColumn>
+        <TableHeaderColumn isKey dataField='userId' dataSort>Jakieś ID</TableHeaderColumn>
+        <TableHeaderColumn dataField='id' dataSort>Jakiś super numerek</TableHeaderColumn>
+        <TableHeaderColumn dataField='title' dataSort>Jakiś mega opis</TableHeaderColumn>
+        <TableHeaderColumn dataField='title' dataSort>Inna super kolumna</TableHeaderColumn>
+        <TableHeaderColumn dataField='title' dataSort>Inna super kolumna</TableHeaderColumn>
+        <TableHeaderColumn dataField='title' dataSort>Inna super kolumna</TableHeaderColumn>
       </BootstrapTable>
     );
   }
