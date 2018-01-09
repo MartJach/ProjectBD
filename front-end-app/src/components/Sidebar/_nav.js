@@ -6,7 +6,7 @@ export default {
       icon: 'icon-home',
       badge: {
         variant: 'info',
-        text: '', // home
+        text: '',
       },
     },
     {
