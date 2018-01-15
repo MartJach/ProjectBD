@@ -4,11 +4,11 @@ import ReactDOM from 'react-dom';
 import { BootstrapTable, TableHeaderColumn } from 'react-bootstrap-table';
 import '../../../node_modules/react-bootstrap-table/dist/react-bootstrap-table-all.min.css';
 
-export default class PublicationsTable extends Component {
+export default class HousesTable extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      publications: [],
+      houses: [],
     };
   }
 
@@ -20,7 +20,7 @@ export default class PublicationsTable extends Component {
     return axios.get('https://jsonplaceholder.typicode.com/albums')
       .then((response) => {
         this.setState({
-          publications: response.data,
+          houses: response.data,
         });
       })
       .catch(error => console.log(error.message));
@@ -28,14 +28,13 @@ export default class PublicationsTable extends Component {
 
   render() {
     return (
-      <BootstrapTable data={this.state.publications} search version='4' pagination>
-        <TableHeaderColumn isKey dataField='userId' dataSort>ID książki</TableHeaderColumn>
-        <TableHeaderColumn dataField='id' dataSort>Tytuł</TableHeaderColumn>
-        <TableHeaderColumn dataField='title' dataSort>Autor</TableHeaderColumn>
-        <TableHeaderColumn dataField='title' dataSort>Wydawnictwo</TableHeaderColumn>
-        <TableHeaderColumn dataField='title' dataSort>Rok wydania</TableHeaderColumn>
+      <BootstrapTable data={this.state.houses} search version='4' pagination>
+        <TableHeaderColumn isKey dataField='userId' dataSort>Nazwa wydawnictwa</TableHeaderColumn>
+        <TableHeaderColumn dataField='id' dataSort>Ilość autorów</TableHeaderColumn>
+        <TableHeaderColumn dataField='title' dataSort>Ilość publikacji</TableHeaderColumn>
         <TableHeaderColumn dataField='title' dataSort>Ilość cytowań</TableHeaderColumn>
         <TableHeaderColumn dataField='title' dataSort>Ilość załączników</TableHeaderColumn>
+        <TableHeaderColumn dataField='title' dataSort>Rok założenia</TableHeaderColumn>
       </BootstrapTable>
     );
   }

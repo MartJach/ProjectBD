@@ -33,8 +33,8 @@ export default class AuthorsTable extends Component {
         <TableHeaderColumn dataField='id' dataSort>Imię</TableHeaderColumn>
         <TableHeaderColumn dataField='title' dataSort>Ilość publikacji</TableHeaderColumn>
         <TableHeaderColumn dataField='title' dataSort>Ilość cytowań</TableHeaderColumn>
-        <TableHeaderColumn dataField='title' dataSort>Inna super kolumna</TableHeaderColumn>
-        <TableHeaderColumn dataField='title' dataSort>Inna super kolumna</TableHeaderColumn>
+        <TableHeaderColumn dataField='title' dataSort>Ilość załączników</TableHeaderColumn>
+        <TableHeaderColumn dataField='title' dataSort>Wiek</TableHeaderColumn>
       </BootstrapTable>
     );
   }
