@@ -1,0 +1,6 @@
+{
+    "name": "AutoSelection",
+    "version": "1.0.0",
+    "private": true,
+    "main": "./AutoSelection.js"
+}
