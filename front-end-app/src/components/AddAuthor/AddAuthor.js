@@ -26,19 +26,23 @@ const AddAuthor = (props) => {
       <h1>Autor <Badge color="secondary" style={styles.badgeStyle}>Nowy</Badge></h1>
       <br />
       <InputGroup style={styles.inputWidth}>
-        <AutoSelection theme={theme} placeholder="Nazwisko" suggestions={Suggestions.languages} />
+        <AutoSelection theme={theme} placeholder="ID (id)" suggestions={Suggestions.languages} />
       </InputGroup>
       <br />
       <InputGroup style={styles.inputWidth}>
-        <AutoSelection theme={theme} placeholder="Imię" suggestions={Suggestions.languages} />
+        <AutoSelection theme={theme} placeholder="Nazwisko (surname)" suggestions={Suggestions.languages} />
       </InputGroup>
       <br />
       <InputGroup style={styles.inputWidth}>
-        <AutoSelection theme={theme} placeholder="Drugie imię" suggestions={Suggestions.languages} />
+        <AutoSelection theme={theme} placeholder="Imię (name)" suggestions={Suggestions.languages} />
       </InputGroup>
       <br />
       <InputGroup style={styles.inputWidth}>
-        <AutoSelection theme={theme} placeholder="ORCID" suggestions={Suggestions.languages} />
+        <AutoSelection theme={theme} placeholder="Drugie imię (name2)" suggestions={Suggestions.languages} />
+      </InputGroup>
+      <br />
+      <InputGroup style={styles.inputWidth}>
+        <AutoSelection theme={theme} placeholder="ORCID (orcid)" suggestions={Suggestions.languages} />
       </InputGroup>
       <br />
       <Button color="primary" style={styles.addButton}>Dodaj</Button>

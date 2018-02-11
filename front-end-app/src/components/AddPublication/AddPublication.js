@@ -53,19 +53,23 @@ export default class KindChoice extends React.Component {
         <h1>Publikacja <Badge color="secondary" style={styles.badgeStyle}>Nowa</Badge></h1>
         <br />
         <InputGroup style={styles.inputWidth}>
-          <AutoSelection theme={theme} placeholder="Nazwisko" suggestions={Suggestions.languages} />
+          <AutoSelection theme={theme} placeholder="ID (id)" suggestions={Suggestions.languages} />
         </InputGroup>
         <br />
         <InputGroup style={styles.inputWidth}>
-          <AutoSelection theme={theme} placeholder="Imię" suggestions={Suggestions.languages} />
+          <AutoSelection theme={theme} placeholder="Tytuł (title)" suggestions={Suggestions.languages} />
+        </InputGroup>
+        <br />
+        <InputGroup style={styles.inputWidth}>
+          <AutoSelection theme={theme} placeholder="Wydawca (publisherId)" suggestions={Suggestions.languages} />
         </InputGroup>
         <br />
         <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
           <DropdownToggle caret style={styles.buttonColors}>
-          Jakiego rodzaju jest publikacja?
+          Jakiego typu jest publikacja?
           </DropdownToggle>
           <DropdownMenu>
-            <DropdownItem header>Wybierz rodzaj</DropdownItem>
+            <DropdownItem header>Wybierz typ</DropdownItem>
             <DropdownItem value={1} onClick={e => this.checkKind(e)}>Książka</DropdownItem>
             <DropdownItem value={2} onClick={e => this.checkKind(e)}>Czasopismo</DropdownItem>
             <DropdownItem value={3} onClick={e => this.checkKind(e)}>Artykuł</DropdownItem>
@@ -77,11 +81,19 @@ export default class KindChoice extends React.Component {
         {this.state.checked === 3 ? <div><h4><Badge color="secondary" style={styles.badgeStyle}>Artykuł</Badge></h4></div> : ''}
         <br />
         <InputGroup style={styles.inputWidth}>
-          <AutoSelection theme={theme} placeholder="Drugie imię" suggestions={Suggestions.languages} />
+          <AutoSelection theme={theme} placeholder="Czasopismo (journalId)" suggestions={Suggestions.languages} />
         </InputGroup>
         <br />
         <InputGroup style={styles.inputWidth}>
-          <AutoSelection theme={theme} placeholder="ORCID" suggestions={Suggestions.languages} />
+          <AutoSelection theme={theme} placeholder="Rok wydania (year)" suggestions={Suggestions.languages} />
+        </InputGroup>
+        <br />
+        <InputGroup style={styles.inputWidth}>
+          <AutoSelection theme={theme} placeholder="Wolumin (vol)" suggestions={Suggestions.languages} />
+        </InputGroup>
+        <br />
+        <InputGroup style={styles.inputWidth}>
+          <AutoSelection theme={theme} placeholder="Wydanie (issue)" suggestions={Suggestions.languages} />
         </InputGroup>
         <br />
         <Button color="primary" style={styles.addButton}>Dodaj</Button>{' '}

@@ -19,6 +19,15 @@ export default {
       },
     },
     {
+      name: 'Cytowania',
+      url: '/citations',
+      icon: 'icon-link',
+      badge: {
+        variant: 'info',
+        text: '',
+      },
+    },
+    {
       name: 'Autorzy',
       url: '/authors',
       icon: 'icon-people',

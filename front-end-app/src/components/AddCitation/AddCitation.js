@@ -18,23 +18,33 @@ const styles = {
   },
 };
 
-const AddHouse = (props) => {
+const AddCitation = (props) => {
+  console.log(Suggestions);
   return (
     <div className="animated fadeIn">
       <br />
-      <h1>Wydawnictwo <Badge color="secondary" style={styles.badgeStyle}>Nowe</Badge></h1>
+      <h1>Cytowanie <Badge color="secondary" style={styles.badgeStyle}>Nowe</Badge></h1>
       <br />
       <InputGroup style={styles.inputWidth}>
         <AutoSelection theme={theme} placeholder="ID (id)" suggestions={Suggestions.languages} />
       </InputGroup>
       <br />
       <InputGroup style={styles.inputWidth}>
-        <AutoSelection theme={theme} placeholder="Nazwa wydawnictwa (name)" suggestions={Suggestions.languages} />
+        <AutoSelection theme={theme} placeholder="Orygialny tekst (originalText)" suggestions={Suggestions.languages} />
       </InputGroup>
       <br />
-      <Button color="primary" style={styles.addButton}>Dodaj</Button>{' '}
+      <InputGroup style={styles.inputWidth}>
+        <AutoSelection theme={theme} placeholder="Jednostka cytująca (unitCiting)" suggestions={Suggestions.languages} />
+      </InputGroup>
+      <br />
+      <InputGroup style={styles.inputWidth}>
+        <AutoSelection theme={theme} placeholder="Jednostka cytowana (unitCited)" suggestions={Suggestions.languages} />
+      </InputGroup>
+      <br />
+      <Button color="primary" style={styles.addButton}>Dodaj</Button>
+      
     </div>
   );
 };
 
-export default AddHouse;
+export default AddCitation;

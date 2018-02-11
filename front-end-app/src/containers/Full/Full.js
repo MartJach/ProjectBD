@@ -9,6 +9,7 @@ import Footer from '../../components/Footer/';
 
 import Home from '../../views/Home/';
 import Publications from '../../views/Publications/';
+import Citations from '../../views/Citations/';
 import Authors from '../../views/Authors/';
 import Houses from '../../views/Houses/';
 import Add from '../../views/Add/';
@@ -24,6 +25,7 @@ const Full = () => (
           <Switch>
             <Route path="/home" name="Strona główna" component={Home} />
             <Route path="/publications" name="Publikacje" component={Publications} />
+            <Route path="/citations" name="Cytowania" component={Citations} />
             <Route path="/authors" name="Autorzy" component={Authors} />
             <Route path="/houses" name="Wydawnictwa" component={Houses} />
             <Route path="/add" name="Dodaj..." component={Add} />

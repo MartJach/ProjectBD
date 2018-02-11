@@ -17,7 +17,7 @@ export default class HousesTable extends Component {
   }
 
   getDataFromApi() {
-    return axios.get('https://jsonplaceholder.typicode.com/albums')
+    return axios.get('http://ddanowskids.ddns.net:8080/institution/list')
       .then((response) => {
         this.setState({
           houses: response.data,
@@ -29,12 +29,8 @@ export default class HousesTable extends Component {
   render() {
     return (
       <BootstrapTable data={this.state.houses} search version='4' pagination>
-        <TableHeaderColumn isKey dataField='userId' dataSort>Nazwa wydawnictwa</TableHeaderColumn>
-        <TableHeaderColumn dataField='id' dataSort>Ilość autorów</TableHeaderColumn>
-        <TableHeaderColumn dataField='title' dataSort>Ilość publikacji</TableHeaderColumn>
-        <TableHeaderColumn dataField='title' dataSort>Ilość cytowań</TableHeaderColumn>
-        <TableHeaderColumn dataField='title' dataSort>Ilość załączników</TableHeaderColumn>
-        <TableHeaderColumn dataField='title' dataSort>Rok założenia</TableHeaderColumn>
+        <TableHeaderColumn isKey dataField='id' dataSort>ID</TableHeaderColumn>
+        <TableHeaderColumn isKey dataField='name' dataSort>Nazwa wydawnictwa</TableHeaderColumn>
       </BootstrapTable>
     );
   }

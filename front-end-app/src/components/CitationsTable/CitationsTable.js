@@ -4,11 +4,11 @@ import ReactDOM from 'react-dom';
 import { BootstrapTable, TableHeaderColumn } from 'react-bootstrap-table';
 import '../../../node_modules/react-bootstrap-table/dist/react-bootstrap-table-all.min.css';
 
-export default class AuthorsTable extends Component {
+export default class CitationsTable extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      authors: [],
+      citations: [],
     };
   }
 
@@ -17,10 +17,10 @@ export default class AuthorsTable extends Component {
   }
 
   getDataFromApi() {
-    return axios.get('http://ddanowskids.ddns.net:8080/person/list')
+    return axios.get('http://ddanowskids.ddns.net:8080/citation/list')
       .then((response) => {
         this.setState({
-          authors: response.data,
+          citations: response.data,
         });
       })
       .catch(error => console.log(error.message));
@@ -28,12 +28,11 @@ export default class AuthorsTable extends Component {
 
   render() {
     return (
-      <BootstrapTable data={this.state.authors} search version='4' pagination>
-        <TableHeaderColumn isKey dataField='surname' dataSort>Nazwisko</TableHeaderColumn>
-        <TableHeaderColumn dataField='name' dataSort>Imię</TableHeaderColumn>
-        <TableHeaderColumn dataField='name2' dataSort>Drugie imię</TableHeaderColumn>
+      <BootstrapTable data={this.state.citations} search version='4' pagination>
+        <TableHeaderColumn isKey dataField='originalText' dataSort>Cytowanie</TableHeaderColumn>
         <TableHeaderColumn dataField='id' dataSort>ID</TableHeaderColumn>
-        <TableHeaderColumn dataField='orcid' dataSort>Numer ORCID</TableHeaderColumn>
+        <TableHeaderColumn dataField='unitCiting' dataSort>Jednostka cytująca</TableHeaderColumn>
+        <TableHeaderColumn dataField='unitCited' dataSort>Jednostka cytowana</TableHeaderColumn>
       </BootstrapTable>
     );
   }

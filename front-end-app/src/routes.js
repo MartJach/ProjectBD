@@ -1,8 +1,9 @@
 const routes = {
-  '/': 'Home',
+  '/': 'Strona główna',
   '/login': 'Login',
   '/home': 'Strona główna',
   '/publications': 'Publikacje',
+  '/citations': 'Cytowania',
   '/authors': 'Autorzy',
   '/houses': 'Wydawnictwa',
   '/add': 'Dodaj...',

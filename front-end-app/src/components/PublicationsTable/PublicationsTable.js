@@ -17,7 +17,7 @@ export default class PublicationsTable extends Component {
   }
 
   getDataFromApi() {
-    return axios.get('https://jsonplaceholder.typicode.com/albums')
+    return axios.get('http://ddanowskids.ddns.net:8080/bib-unit/list')
       .then((response) => {
         this.setState({
           publications: response.data,
@@ -29,13 +29,14 @@ export default class PublicationsTable extends Component {
   render() {
     return (
       <BootstrapTable data={this.state.publications} search version='4' pagination>
-        <TableHeaderColumn isKey dataField='userId' dataSort>ID książki</TableHeaderColumn>
-        <TableHeaderColumn dataField='id' dataSort>Tytuł</TableHeaderColumn>
-        <TableHeaderColumn dataField='title' dataSort>Autor</TableHeaderColumn>
-        <TableHeaderColumn dataField='title' dataSort>Wydawnictwo</TableHeaderColumn>
-        <TableHeaderColumn dataField='title' dataSort>Rok wydania</TableHeaderColumn>
-        <TableHeaderColumn dataField='title' dataSort>Ilość cytowań</TableHeaderColumn>
-        <TableHeaderColumn dataField='title' dataSort>Ilość załączników</TableHeaderColumn>
+        <TableHeaderColumn isKey dataField='title' dataSort>Tytuł</TableHeaderColumn>
+        <TableHeaderColumn dataField='id' dataSort>ID</TableHeaderColumn>
+        <TableHeaderColumn dataField='bibType' dataSort>Typ</TableHeaderColumn>
+        <TableHeaderColumn dataField='publisherId' dataSort>Wydawca</TableHeaderColumn>
+        <TableHeaderColumn dataField='journalId' dataSort>Czasopismo</TableHeaderColumn>
+        <TableHeaderColumn dataField='year' dataSort>Rok wydania</TableHeaderColumn>
+        <TableHeaderColumn dataField='vol' dataSort>Wolumin</TableHeaderColumn>
+        <TableHeaderColumn dataField='issue' dataSort>Wydanie</TableHeaderColumn>
       </BootstrapTable>
     );
   }

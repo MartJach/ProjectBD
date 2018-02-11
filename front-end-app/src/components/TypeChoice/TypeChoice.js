@@ -1,6 +1,7 @@
 import React from 'react';
 import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
 import AddPublication from '../../components/AddPublication/';
+import AddCitation from '../../components/AddCitation/';
 import AddAuthor from '../../components/AddAuthor/';
 import AddHouse from '../../components/AddHouse/';
 
@@ -46,13 +47,15 @@ export default class TypeChoice extends React.Component {
           <DropdownMenu>
             <DropdownItem header>Wybierz typ</DropdownItem>
             <DropdownItem value={1} onClick={e => this.checkType(e)}>Publikacja</DropdownItem>
-            <DropdownItem value={2} onClick={e => this.checkType(e)}>Autor</DropdownItem>
-            <DropdownItem value={3} onClick={e => this.checkType(e)}>Wydawnictwo</DropdownItem>
+            <DropdownItem value={2} onClick={e => this.checkType(e)}>Cytowanie</DropdownItem>
+            <DropdownItem value={3} onClick={e => this.checkType(e)}>Autor</DropdownItem>
+            <DropdownItem value={4} onClick={e => this.checkType(e)}>Wydawnictwo</DropdownItem>
           </DropdownMenu>
         </Dropdown>
         {this.state.checked === 1 ? <div><AddPublication /></div> : ''}
-        {this.state.checked === 2 ? <div><AddAuthor /></div> : ''}
-        {this.state.checked === 3 ? <div><AddHouse /></div> : ''}
+        {this.state.checked === 2 ? <div><AddCitation /></div> : ''}
+        {this.state.checked === 3 ? <div><AddAuthor /></div> : ''}
+        {this.state.checked === 4 ? <div><AddHouse /></div> : ''}
       </div>
     );
   }
