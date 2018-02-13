@@ -6,7 +6,7 @@ import theme from '../../../scss/views/theme.scss';
 
 const styles = {
   inputWidth: {
-    width: '40%',
+    width: '120%',
   },
   badgeStyle: {
     color: '#fff',
@@ -60,13 +60,9 @@ export default class KindChoice extends React.Component {
           <AutoSelection theme={theme} placeholder="Tytuł (title)" suggestions={Suggestions.languages} />
         </InputGroup>
         <br />
-        <InputGroup style={styles.inputWidth}>
-          <AutoSelection theme={theme} placeholder="Wydawca (publisherId)" suggestions={Suggestions.languages} />
-        </InputGroup>
-        <br />
         <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
           <DropdownToggle caret style={styles.buttonColors}>
-          Jakiego typu jest publikacja?
+          Jakiego typu jest publikacja (bibType)?
           </DropdownToggle>
           <DropdownMenu>
             <DropdownItem header>Wybierz typ</DropdownItem>
@@ -81,7 +77,15 @@ export default class KindChoice extends React.Component {
         {this.state.checked === 3 ? <div><h4><Badge color="secondary" style={styles.badgeStyle}>Artykuł</Badge></h4></div> : ''}
         <br />
         <InputGroup style={styles.inputWidth}>
-          <AutoSelection theme={theme} placeholder="Czasopismo (journalId)" suggestions={Suggestions.languages} />
+          <AutoSelection theme={theme} placeholder="Autor (publisherId.name)" suggestions={Suggestions.languages} />
+        </InputGroup>
+        <br />
+        <InputGroup style={styles.inputWidth}>
+          <AutoSelection theme={theme} placeholder="Wydawnictwo (institutionId.name)" suggestions={Suggestions.languages} />
+        </InputGroup>
+        <br />
+        <InputGroup style={styles.inputWidth}>
+          <AutoSelection theme={theme} placeholder="Czasopismo (journalId.name)" suggestions={Suggestions.languages} />
         </InputGroup>
         <br />
         <InputGroup style={styles.inputWidth}>
@@ -94,6 +98,14 @@ export default class KindChoice extends React.Component {
         <br />
         <InputGroup style={styles.inputWidth}>
           <AutoSelection theme={theme} placeholder="Wydanie (issue)" suggestions={Suggestions.languages} />
+        </InputGroup>
+        <br />
+        <InputGroup style={styles.inputWidth}>
+          <AutoSelection theme={theme} placeholder="ISBN (isbn)" suggestions={Suggestions.languages} />
+        </InputGroup>
+        <br />
+        <InputGroup style={styles.inputWidth}>
+          <AutoSelection theme={theme} placeholder="DOI (doi)" suggestions={Suggestions.languages} />
         </InputGroup>
         <br />
         <Button color="primary" style={styles.addButton}>Dodaj</Button>{' '}

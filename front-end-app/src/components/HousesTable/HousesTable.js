@@ -30,7 +30,7 @@ export default class HousesTable extends Component {
     return (
       <BootstrapTable data={this.state.houses} search version='4' pagination>
         <TableHeaderColumn isKey dataField='id' dataSort>ID</TableHeaderColumn>
-        <TableHeaderColumn isKey dataField='name' dataSort>Nazwa wydawnictwa</TableHeaderColumn>
+        <TableHeaderColumn dataField='name' dataSort>Nazwa wydawnictwa</TableHeaderColumn>
       </BootstrapTable>
     );
   }

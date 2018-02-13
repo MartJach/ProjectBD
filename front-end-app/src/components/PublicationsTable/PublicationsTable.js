@@ -19,6 +19,14 @@ export default class PublicationsTable extends Component {
   getDataFromApi() {
     return axios.get('http://ddanowskids.ddns.net:8080/bib-unit/list')
       .then((response) => {
+        let data = response.data;
+        for (let i = 0; i < data.length; i++) {
+          data[i].publisherIdName = data[i].publisherId.name;
+          if (data[i].journalId != null) data[i].journalIdName = data[i].journalId.name; else data[i].journalIdName = '-';
+          data[i].institutionIdName = data[i].publisherId.institutionId.name;
+          if (data[i].vol == null) data[i].vol = '-';
+        }
+
         this.setState({
           publications: response.data,
         });
@@ -29,14 +37,17 @@ export default class PublicationsTable extends Component {
   render() {
     return (
       <BootstrapTable data={this.state.publications} search version='4' pagination>
-        <TableHeaderColumn isKey dataField='title' dataSort>Tytuł</TableHeaderColumn>
-        <TableHeaderColumn dataField='id' dataSort>ID</TableHeaderColumn>
+        <TableHeaderColumn isKey dataField='id' dataSort>ID</TableHeaderColumn>
+        <TableHeaderColumn dataField='title' dataSort>Tytuł</TableHeaderColumn>
         <TableHeaderColumn dataField='bibType' dataSort>Typ</TableHeaderColumn>
-        <TableHeaderColumn dataField='publisherId' dataSort>Wydawca</TableHeaderColumn>
-        <TableHeaderColumn dataField='journalId' dataSort>Czasopismo</TableHeaderColumn>
+        <TableHeaderColumn dataField='publisherIdName' dataSort>Autor</TableHeaderColumn>
+        <TableHeaderColumn dataField='institutionIdName' dataSort>Wydawnictwo</TableHeaderColumn>
+        <TableHeaderColumn dataField='journalIdName' dataSort>Czasopismo</TableHeaderColumn>
         <TableHeaderColumn dataField='year' dataSort>Rok wydania</TableHeaderColumn>
         <TableHeaderColumn dataField='vol' dataSort>Wolumin</TableHeaderColumn>
         <TableHeaderColumn dataField='issue' dataSort>Wydanie</TableHeaderColumn>
+        <TableHeaderColumn dataField='isbn' dataSort>ISBN</TableHeaderColumn>
+        <TableHeaderColumn dataField='doi' dataSort>DOI</TableHeaderColumn>
       </BootstrapTable>
     );
   }

@@ -6,7 +6,7 @@ import theme from '../../../scss/views/theme.scss';
 
 const styles = {
   inputWidth: {
-    width: '40%',
+    width: '60%',
   },
   badgeStyle: {
     color: '#fff',
@@ -34,11 +34,15 @@ const AddCitation = (props) => {
       </InputGroup>
       <br />
       <InputGroup style={styles.inputWidth}>
-        <AutoSelection theme={theme} placeholder="Jednostka cytująca (unitCiting)" suggestions={Suggestions.languages} />
+        <AutoSelection theme={theme} placeholder="Jednostka cytująca (unitCiting.title)" suggestions={Suggestions.languages} />
       </InputGroup>
       <br />
       <InputGroup style={styles.inputWidth}>
-        <AutoSelection theme={theme} placeholder="Jednostka cytowana (unitCited)" suggestions={Suggestions.languages} />
+        <AutoSelection theme={theme} placeholder="Jednostka cytowana (unitCited.title)" suggestions={Suggestions.languages} />
+      </InputGroup>
+      <br />
+      <InputGroup style={styles.inputWidth}>
+        <AutoSelection theme={theme} placeholder="Typ (type)" suggestions={Suggestions.languages} />
       </InputGroup>
       <br />
       <Button color="primary" style={styles.addButton}>Dodaj</Button>

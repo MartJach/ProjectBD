@@ -19,6 +19,12 @@ export default class CitationsTable extends Component {
   getDataFromApi() {
     return axios.get('http://ddanowskids.ddns.net:8080/citation/list')
       .then((response) => {
+        let data = response.data;
+        for (let i = 0; i < data.length; i++) {
+          data[i].unitCitingTitle = data[i].unitCiting.title;
+          data[i].unitCitedTitle = data[i].unitCited.title;
+        }
+
         this.setState({
           citations: response.data,
         });
@@ -29,10 +35,11 @@ export default class CitationsTable extends Component {
   render() {
     return (
       <BootstrapTable data={this.state.citations} search version='4' pagination>
-        <TableHeaderColumn isKey dataField='originalText' dataSort>Cytowanie</TableHeaderColumn>
-        <TableHeaderColumn dataField='id' dataSort>ID</TableHeaderColumn>
-        <TableHeaderColumn dataField='unitCiting' dataSort>Jednostka cytująca</TableHeaderColumn>
-        <TableHeaderColumn dataField='unitCited' dataSort>Jednostka cytowana</TableHeaderColumn>
+        <TableHeaderColumn isKey dataField='id' dataSort>ID</TableHeaderColumn>
+        <TableHeaderColumn dataField='originalText' dataSort>Cytowanie</TableHeaderColumn>
+        <TableHeaderColumn dataField='unitCitingTitle' dataSort>Jednostka cytująca</TableHeaderColumn>
+        <TableHeaderColumn dataField='unitCitedTitle' dataSort>Jednostka cytowana</TableHeaderColumn>
+        <TableHeaderColumn dataField='type' dataSort>Typ</TableHeaderColumn>
       </BootstrapTable>
     );
   }

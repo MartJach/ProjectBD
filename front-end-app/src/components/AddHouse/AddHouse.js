@@ -6,7 +6,7 @@ import theme from '../../../scss/views/theme.scss';
 
 const styles = {
   inputWidth: {
-    width: '40%',
+    width: '60%',
   },
   badgeStyle: {
     color: '#fff',

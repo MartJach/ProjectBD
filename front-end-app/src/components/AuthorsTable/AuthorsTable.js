@@ -29,10 +29,10 @@ export default class AuthorsTable extends Component {
   render() {
     return (
       <BootstrapTable data={this.state.authors} search version='4' pagination>
-        <TableHeaderColumn isKey dataField='surname' dataSort>Nazwisko</TableHeaderColumn>
+        <TableHeaderColumn isKey dataField='id' dataSort>ID</TableHeaderColumn>
+        <TableHeaderColumn dataField='surname' dataSort>Nazwisko</TableHeaderColumn>
         <TableHeaderColumn dataField='name' dataSort>Imię</TableHeaderColumn>
         <TableHeaderColumn dataField='name2' dataSort>Drugie imię</TableHeaderColumn>
-        <TableHeaderColumn dataField='id' dataSort>ID</TableHeaderColumn>
         <TableHeaderColumn dataField='orcid' dataSort>Numer ORCID</TableHeaderColumn>
       </BootstrapTable>
     );
