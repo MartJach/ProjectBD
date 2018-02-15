@@ -38,7 +38,6 @@ class LoginAuth extends Component {
   }
 
   // set BankID from input field
-
   setBankID(e) {
     this.setState({ bankID: e.target.value });
   }
@@ -48,7 +47,7 @@ class LoginAuth extends Component {
   }
 
   checkAuthLogin() {
-    if ((this.state.bankID === 'admin123' && this.state.userID === 'admin') || (this.state.bankID === 'user123' && this.state.userID === 'users')) {
+    if (this.state.bankID === 'haslo12' && this.state.userID === 'admin') {
       localStorage.setItem('auth', true);
       window.location.reload();
       this.setState({ errorMessage: false });

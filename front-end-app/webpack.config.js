@@ -3,6 +3,7 @@ const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const BabelPolyfill = require('babel-polyfill');
 
 const extractCSS = new ExtractTextPlugin('[name].fonts.css');
 const extractSCSS = new ExtractTextPlugin('[name].styles.css');
@@ -16,7 +17,7 @@ console.log('SRC_DIR', SRC_DIR);
 module.exports = (env = {}) => {
   return {
     entry: {
-      index: [SRC_DIR + '/index.js']
+      index: [SRC_DIR + '/index.js'],
     },
     output: {
       path: BUILD_DIR,
